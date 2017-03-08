@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Angular App</title>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+        <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>        
+        <script type="text/javascript" src="/script/app.js"></script>
+        <script type="text/javascript" src="/script/controller/employeeCtrl.js"></script>   
+    </head>
+     
+    <body   ng-app="employee">
+        
+        <h1>Angular Application</h1>
+        
+        <div  ng-controller="employeeCtrl">
+            
+            <table class="table table-hover" >
+                <tr>
+                <th>Employee First Name :</th> 
+                    <td>
+                        <input type="text" ng-model="firstName">
+                    </td>
+                </tr>
+                
+                <tr>
+                <th>Employee last Name :</th> 
+                    <td>
+                        <input type="text" ng-model="lastName">
+                    </td>
+                </tr>
+                <tr>
+                <th>Employee Hourly Rate :</th> 
+                    <td>
+                        <input type="number" ng-model="hourlyRate">
+                    </td>
+                </tr>
+                <tr>
+                <th>Employee Hours Worked :</th> 
+                    <td>
+                        <input type="number" ng-model="hoursWorked">
+                    </td>
+                </tr>
+                <tr>
+                <th></th> 
+                    <td>
+                        <button ng-click="submit()">Submit</button>
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>FirstName</td>
+                        <td>LastName</td>
+                        <td>HourlyRate</td>
+                        <td>HoursWorked</td>
+                        <td>GrossSalary</td>
+                        <td>TotalTaxes</td>
+                        <td>NetSalary</td>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{firstName}}</td>
+                        <td>{{lastName}}</td>
+                        <td>${{hourlyRate}}</td>
+                        <td>{{hoursWorked}}</td>
+                        <td>${{grossSalary}}</td>
+                        <td>${{totalTaxes}}</td>
+                        <td>${{netSalary}}</td>
+                        
+                        
+                    </tr>
+                </tbody>
+            
+            </table>    
+           
+        
+        </div>
+        
+       
+       
+    </body>
+
+
+</html>
